@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+.pytest_cache/
+bench/results/
+runs/
+*.jsonl
+NOTES.md
+PLAN.md

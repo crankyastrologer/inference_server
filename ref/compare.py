@@ -41,8 +41,8 @@ def _diff(name: str, cand: torch.Tensor, gold: torch.Tensor, rtol: float, atol: 
             golden_shape=tuple(gold.shape),
             note="shape mismatch",
         )
-    a = cand.detach().to(torch.float32)
-    b = gold.detach().to(torch.float32)
+    a = cand.detach().to(device="cpu", dtype=torch.float32)
+    b = gold.detach().to(device="cpu", dtype=torch.float32)
     abs_err = (a - b).abs()
     max_abs = float(abs_err.max()) if abs_err.numel() else 0.0
     mean_abs = float(abs_err.mean()) if abs_err.numel() else 0.0
